@@ -1,0 +1,1797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuiverSoftech (Pty) Ltd – Unconventional ICT Solutions | South Africa</title>
+  <meta name="description" content="QuiverSoftech is one of Africa's premier ICT solution partners, delivering unconventional and effective Information and Communications Technology services and solutions across Southern Africa.">
+  <meta name="keywords" content="QuiverSoftech, ICT, Cybersecurity, Mobile Money, Cloud Services, Application Development, South Africa, Africa, STEM, Robotics, SOC, SIEM">
+  <meta property="og:title" content="QuiverSoftech (Pty) Ltd">
+  <meta property="og:description" content="Unconventional and Out-of-the-Box exciting ICT Services & Solutions for the Future">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* ===================================================
+       CSS CUSTOM PROPERTIES
+    =================================================== */
+    :root {
+      --yellow: #FFE000;
+      --yellow-dark: #D4B800;
+      --yellow-glow: rgba(255, 224, 0, 0.25);
+      --black: #0a0a0a;
+      --dark: #111111;
+      --dark-2: #1a1a1a;
+      --dark-3: #222222;
+      --dark-4: #2a2a2a;
+      --white: #ffffff;
+      --grey-100: #f5f5f5;
+      --grey-200: #e8e8e8;
+      --grey-400: #999999;
+      --grey-600: #666666;
+      --font-main: 'Inter', sans-serif;
+      --font-heading: 'Space Grotesk', sans-serif;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+      --shadow-md: 0 8px 32px rgba(0,0,0,0.4);
+      --shadow-lg: 0 20px 60px rgba(0,0,0,0.5);
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ===================================================
+       RESET & BASE
+    =================================================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: var(--font-main);
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; transition: var(--transition); }
+    img { max-width: 100%; height: auto; display: block; }
+    ul { list-style: none; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section { position: relative; }
+
+    /* ===================================================
+       NAVIGATION
+    =================================================== */
+    .nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: var(--transition);
+    }
+
+    .nav-top {
+      background: var(--dark-2);
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.8rem;
+    }
+
+    .nav-top .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .nav-top-contacts {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-top-contacts a,
+    .nav-top-social a {
+      color: var(--grey-400);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+    }
+
+    .nav-top-contacts a:hover,
+    .nav-top-social a:hover { color: var(--yellow); }
+
+    .nav-top-social {
+      display: flex;
+      gap: 14px;
+    }
+
+    .nav-main {
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 224, 0, 0.15);
+      padding: 14px 0;
+    }
+
+    .nav-main .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo img {
+      height: 44px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--grey-200);
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--yellow);
+      background: var(--yellow-glow);
+    }
+
+    .nav-cta {
+      background: var(--yellow) !important;
+      color: var(--black) !important;
+      font-weight: 700 !important;
+      border-radius: var(--radius-sm) !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--yellow-dark) !important;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px var(--yellow-glow);
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      transition: var(--transition);
+      border-radius: 2px;
+    }
+
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ===================================================
+       HERO
+    =================================================== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 120px;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #0a0a0a 0%, #111111 40%, #1a1200 100%);
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,224,0,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,224,0,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent);
+    }
+
+    .hero-glow {
+      position: absolute;
+      top: 20%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255,224,0,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-glow-2 {
+      position: absolute;
+      bottom: 0;
+      left: -5%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255,224,0,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,224,0,0.1);
+      border: 1px solid rgba(255,224,0,0.3);
+      color: var(--yellow);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--yellow);
+      border-radius: 50%;
+      animation: pulse-dot 2s infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.5); }
+    }
+
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 .accent { color: var(--yellow); }
+
+    .hero h1 .outline {
+      -webkit-text-stroke: 2px var(--yellow);
+      color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      color: var(--grey-400);
+      max-width: 520px;
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--yellow);
+      color: var(--black);
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.03em;
+      padding: 14px 28px;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background: var(--yellow-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px var(--yellow-glow);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--white);
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 14px 28px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--yellow);
+      color: var(--yellow);
+      background: var(--yellow-glow);
+    }
+
+    .hero-image-wrap {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-image-ring {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border: 1px solid rgba(255,224,0,0.15);
+      border-radius: 50%;
+      animation: spin-slow 30s linear infinite;
+    }
+
+    .hero-image-ring::before {
+      content: '';
+      position: absolute;
+      top: -4px;
+      left: 50%;
+      width: 8px;
+      height: 8px;
+      background: var(--yellow);
+      border-radius: 50%;
+      margin-left: -4px;
+    }
+
+    .hero-image-ring-2 {
+      width: 380px;
+      height: 380px;
+      border-color: rgba(255,224,0,0.08);
+      animation: spin-slow 20s linear infinite reverse;
+    }
+
+    @keyframes spin-slow { to { transform: rotate(360deg); } }
+
+    .hero-laptop {
+      position: relative;
+      z-index: 1;
+      max-width: 480px;
+      filter: drop-shadow(0 30px 60px rgba(255,224,0,0.15));
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-16px); }
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 48px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .hero-stat-num {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--yellow);
+      line-height: 1;
+    }
+
+    .hero-stat-label {
+      font-size: 0.78rem;
+      color: var(--grey-400);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ===================================================
+       SECTION SHARED STYLES
+    =================================================== */
+    .section-pad { padding: 100px 0; }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--yellow);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-tag::before {
+      content: '';
+      width: 24px;
+      height: 2px;
+      background: var(--yellow);
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--grey-400);
+      max-width: 640px;
+      line-height: 1.7;
+    }
+
+    .section-header { margin-bottom: 64px; }
+    .section-header.center { text-align: center; }
+    .section-header.center .section-subtitle { margin: 0 auto; }
+    .section-header.center .section-tag { justify-content: center; }
+
+    /* ===================================================
+       ABOUT
+    =================================================== */
+    .about { background: var(--dark); }
+
+    .about .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .about-img-wrap {
+      position: relative;
+    }
+
+    .about-img-wrap img {
+      border-radius: var(--radius-md);
+      width: 100%;
+      object-fit: cover;
+      filter: brightness(0.9);
+    }
+
+    .about-img-badge {
+      position: absolute;
+      bottom: -24px;
+      right: -24px;
+      background: var(--yellow);
+      color: var(--black);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .about-img-badge .num {
+      font-size: 2.2rem;
+      line-height: 1;
+      display: block;
+    }
+
+    .about-img-badge .lbl {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .value-card {
+      background: var(--dark-2);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      transition: var(--transition);
+    }
+
+    .value-card:hover {
+      border-color: rgba(255,224,0,0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+    }
+
+    .value-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--yellow-glow);
+      border: 1px solid rgba(255,224,0,0.25);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--yellow);
+      font-size: 1.1rem;
+      margin-bottom: 14px;
+    }
+
+    .value-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .value-card p {
+      font-size: 0.85rem;
+      color: var(--grey-400);
+      line-height: 1.6;
+    }
+
+    .core-values-list {
+      margin-top: 4px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .core-values-list li {
+      font-size: 0.8rem;
+      color: var(--grey-400);
+      background: rgba(255,255,255,0.04);
+      padding: 4px 12px;
+      border-radius: 100px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* ===================================================
+       SERVICES
+    =================================================== */
+    .services { background: var(--black); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--dark-2);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--yellow), var(--yellow-dark));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .service-card:hover {
+      border-color: rgba(255,224,0,0.2);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, rgba(255,224,0,0.15), rgba(255,224,0,0.05));
+      border: 1px solid rgba(255,224,0,0.2);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: var(--yellow);
+      margin-bottom: 20px;
+      transition: var(--transition);
+    }
+
+    .service-card:hover .service-icon {
+      background: var(--yellow);
+      color: var(--black);
+      border-color: var(--yellow);
+    }
+
+    .service-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .service-card p,
+    .service-card ul li {
+      font-size: 0.85rem;
+      color: var(--grey-400);
+      line-height: 1.65;
+    }
+
+    .service-card ul {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .service-card ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .service-card ul li::before {
+      content: '→';
+      color: var(--yellow);
+      font-size: 0.75rem;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--yellow);
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-top: 16px;
+      transition: var(--transition);
+    }
+
+    .service-link:hover { gap: 10px; }
+
+    /* ===================================================
+       SOLUTIONS
+    =================================================== */
+    .solutions { background: var(--dark); }
+
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .solution-card {
+      background: var(--dark-3);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--radius-md);
+      padding: 36px;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .solution-card.featured {
+      background: linear-gradient(135deg, rgba(255,224,0,0.12), rgba(255,224,0,0.04));
+      border-color: rgba(255,224,0,0.35);
+    }
+
+    .solution-card.featured .solution-badge {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--black);
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+
+    .solution-card:not(.featured) .solution-badge { display: none; }
+
+    .solution-card:hover {
+      border-color: rgba(255,224,0,0.3);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    .solution-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(255,224,0,0.1);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--yellow);
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+    }
+
+    .solution-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .solution-card p {
+      font-size: 0.85rem;
+      color: var(--grey-400);
+      margin-bottom: 16px;
+      line-height: 1.65;
+    }
+
+    .solution-card ul {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .solution-card ul li {
+      font-size: 0.83rem;
+      color: var(--grey-400);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .solution-card ul li::before {
+      content: '✓';
+      color: var(--yellow);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* ===================================================
+       PARTNERS
+    =================================================== */
+    .partners { background: var(--black); }
+
+    .partners-intro {
+      font-size: 0.95rem;
+      color: var(--grey-400);
+    }
+
+    .partners-intro a {
+      color: var(--yellow);
+      text-decoration: underline;
+    }
+
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 2px;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+
+    .partner-cell {
+      background: var(--dark-2);
+      border: 1px solid rgba(255,255,255,0.04);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px 20px;
+      transition: var(--transition);
+      min-height: 100px;
+    }
+
+    .partner-cell:hover {
+      background: var(--dark-3);
+      border-color: rgba(255,224,0,0.2);
+    }
+
+    .partner-cell img {
+      max-height: 48px;
+      max-width: 120px;
+      object-fit: contain;
+      filter: grayscale(100%) brightness(0.7);
+      transition: var(--transition);
+    }
+
+    .partner-cell:hover img {
+      filter: grayscale(0%) brightness(1);
+    }
+
+    .partner-cell .partner-name {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--grey-400);
+      text-align: center;
+      letter-spacing: 0.04em;
+    }
+
+    .partner-cell:hover .partner-name { color: var(--yellow); }
+
+    /* ===================================================
+       CONTACT
+    =================================================== */
+    .contact { background: var(--dark); }
+
+    .contact .container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 60px;
+      align-items: start;
+    }
+
+    .contact-detail {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 28px;
+      align-items: flex-start;
+    }
+
+    .contact-detail-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--yellow-glow);
+      border: 1px solid rgba(255,224,0,0.25);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--yellow);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-detail-body h4 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--grey-600);
+      margin-bottom: 4px;
+    }
+
+    .contact-detail-body p,
+    .contact-detail-body a {
+      font-size: 0.92rem;
+      color: var(--grey-200);
+      line-height: 1.5;
+    }
+
+    .contact-detail-body a:hover { color: var(--yellow); }
+
+    .contact-social {
+      display: flex;
+      gap: 12px;
+      margin-top: 36px;
+      padding-top: 36px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .contact-social a {
+      width: 42px;
+      height: 42px;
+      background: var(--dark-3);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--grey-400);
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    .contact-social a:hover {
+      background: var(--yellow);
+      color: var(--black);
+      border-color: var(--yellow);
+      transform: translateY(-3px);
+    }
+
+
+    /* ===================================================
+       FOOTER
+    =================================================== */
+    footer {
+      background: var(--dark-2);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 60px 0 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+
+    .footer-brand img {
+      height: 40px;
+      margin-bottom: 16px;
+    }
+
+    .footer-brand p {
+      font-size: 0.87rem;
+      color: var(--grey-400);
+      line-height: 1.7;
+      max-width: 280px;
+    }
+
+    .footer-col h4 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--grey-200);
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      font-size: 0.87rem;
+      color: var(--grey-400);
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .footer-links a:hover { color: var(--yellow); padding-left: 4px; }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 24px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-bottom p {
+      font-size: 0.82rem;
+      color: var(--grey-600);
+    }
+
+    .footer-bottom a { color: var(--yellow); }
+
+    /* ===================================================
+       SCROLL TO TOP
+    =================================================== */
+    .scroll-top {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      width: 46px;
+      height: 46px;
+      background: var(--yellow);
+      color: var(--black);
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      z-index: 999;
+    }
+
+    .scroll-top.visible { opacity: 1; visibility: visible; }
+    .scroll-top:hover { background: var(--yellow-dark); transform: translateY(-3px); }
+
+    /* ===================================================
+       ANIMATIONS
+    =================================================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+
+    /* ===================================================
+       RESPONSIVE
+    =================================================== */
+    @media (max-width: 1024px) {
+      .services-grid, .solutions-grid { grid-template-columns: repeat(2, 1fr); }
+      .partners-grid { grid-template-columns: repeat(4, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-top { display: none; }
+
+      .nav-toggle { display: flex; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(10,10,10,0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 16px 24px 24px;
+        border-bottom: 1px solid rgba(255,224,0,0.15);
+        gap: 4px;
+      }
+
+      .nav-links.open { display: flex; }
+
+      .nav-links a {
+        padding: 12px 16px;
+        width: 100%;
+      }
+
+      .hero .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+      }
+
+      .hero-actions { justify-content: center; }
+
+      .hero-stats { justify-content: center; gap: 24px; }
+
+      .hero-image-wrap { display: none; }
+
+      .about .container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .about-img-badge { bottom: 8px; right: 8px; }
+
+      .values-grid { grid-template-columns: 1fr; }
+
+      .services-grid, .solutions-grid { grid-template-columns: 1fr; }
+
+      .partners-grid { grid-template-columns: repeat(3, 1fr); }
+
+      .contact .container { grid-template-columns: 1fr; gap: 48px; }
+
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+
+      .section-pad { padding: 70px 0; }
+    }
+
+    @media (max-width: 480px) {
+      .partners-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =====================================================
+       NAVIGATION
+  ===================================================== -->
+  <nav class="nav" id="nav">
+    <div class="nav-top">
+      <div class="container">
+        <div class="nav-top-contacts">
+          <a href="tel:+27687360127"><i class="fa-solid fa-phone"></i> +27 68 736 0127</a>
+          <a href="mailto:info@quiversoftech.com"><i class="fa-solid fa-envelope"></i> info@quiversoftech.com</a>
+        </div>
+        <div class="nav-top-social">
+          <a href="https://www.facebook.com/quiversoftech" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://twitter.com/quiver_softech" target="_blank" rel="noopener" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://g.page/quiversoftech?gm" target="_blank" rel="noopener" aria-label="Google"><i class="fa-brands fa-google"></i></a>
+          <a href="mailto:info@quiversoftech.com?subject=Feedback%20from%20website" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-main">
+      <div class="container">
+        <a href="#home" class="nav-logo">
+          <img src="assets/images/logo.png" alt="QuiverSoftech Logo">
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#solutions">Solutions</a></li>
+          <li><a href="#partners">Partners</a></li>
+          <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =====================================================
+       HERO
+  ===================================================== -->
+  <section id="home" class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-glow-2"></div>
+
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">Africa's Premier ICT Partner</div>
+        <h1>
+          <span class="outline">QUIVER</span><span class="accent">SOFTECH</span><br>
+          ICT Solutions<br>for the Future
+        </h1>
+        <p class="hero-desc">
+          Unconventional and out-of-the-box Information and Communications Technology services and solutions for companies and organisations across Southern Africa and beyond.
+        </p>
+        <div class="hero-actions">
+          <a href="#services" class="btn-primary">
+            Explore Services <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="#contact" class="btn-outline">
+            Get in Touch
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-num">15+</div>
+            <div class="hero-stat-label">Years Experience</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">18+</div>
+            <div class="hero-stat-label">Partners & Clients</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">8+</div>
+            <div class="hero-stat-label">African Countries</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-image-wrap">
+        <div class="hero-image-ring"></div>
+        <div class="hero-image-ring hero-image-ring-2"></div>
+        <img src="assets/images/macbook-pro.png" alt="QuiverSoftech Solutions" class="hero-laptop">
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       ABOUT
+  ===================================================== -->
+  <section id="about" class="about section-pad">
+    <div class="container">
+      <div>
+        <div class="about-img-wrap reveal">
+          <img src="assets/images/bussinessapp.jpg" alt="QuiverSoftech Business Solutions">
+          <div class="about-img-badge">
+            <span class="num">10+</span>
+            <span class="lbl">Years Delivering<br>Excellence</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="section-header reveal">
+          <div class="section-tag">Who We Are</div>
+          <h2 class="section-title">Africa's Premier ICT Solution Partner</h2>
+          <p class="section-subtitle">
+            QuiverSoftech (Pty) Ltd provides the best unconventional and most effective ICT services and solutions to companies and organisations, revolutionising business through the best of cross-pollinated technologies, people and processes.
+          </p>
+        </div>
+
+        <div class="values-grid">
+          <div class="value-card reveal reveal-delay-1">
+            <div class="value-icon"><i class="fa-solid fa-eye"></i></div>
+            <h3>Vision</h3>
+            <p>Develop strategic partnerships by providing innovative custom solutions that transcend into a Digital Pangea.</p>
+          </div>
+          <div class="value-card reveal reveal-delay-2">
+            <div class="value-icon"><i class="fa-solid fa-heart"></i></div>
+            <h3>Passion</h3>
+            <p>Enriching communities using cost-effective, open-source and commercial technologies that allow SMEs to flourish.</p>
+          </div>
+          <div class="value-card reveal reveal-delay-3">
+            <div class="value-icon"><i class="fa-solid fa-handshake"></i></div>
+            <h3>Mission</h3>
+            <p>To create unconventional and out-of-the-box exciting ICT products, services and solutions for the future.</p>
+          </div>
+          <div class="value-card reveal reveal-delay-4">
+            <div class="value-icon"><i class="fa-solid fa-star"></i></div>
+            <h3>Core Values</h3>
+            <ul class="core-values-list">
+              <li>Respect</li>
+              <li>Teamwork</li>
+              <li>Innovation</li>
+              <li>Integrity</li>
+              <li>Customer Centricity</li>
+              <li>Dynamism</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       SERVICES
+  ===================================================== -->
+  <section id="services" class="services section-pad">
+    <div class="container">
+      <div class="section-header center reveal">
+        <div class="section-tag">What We Do</div>
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">
+          We deliver dependable ICT services ensuring customers have high-quality capabilities and can operate independently. Your success is our success.
+        </p>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+          <h3>Application Development &amp; System Integration</h3>
+          <ul>
+            <li>Cross-platform applications for enterprise, web, mobile &amp; cloud</li>
+            <li>End-to-End Lifecycle: Design, Development, QA, Release &amp; Support</li>
+            <li>System Integration using enterprise patterns or packaged OEM products</li>
+            <li>Data Migration &amp; Change Management</li>
+          </ul>
+        </div>
+
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-icon"><i class="fa-solid fa-server"></i></div>
+          <h3>ICT Consulting &amp; IT Infrastructure</h3>
+          <ul>
+            <li>Strategy to execution with highly qualified ICT consultants</li>
+            <li>On-premises and cloud infrastructure implementation &amp; support</li>
+            <li>Architecture design and technology roadmapping</li>
+          </ul>
+        </div>
+
+        <div class="service-card reveal reveal-delay-3">
+          <div class="service-icon"><i class="fa-solid fa-gear"></i></div>
+          <h3>Professional Support Services</h3>
+          <ul>
+            <li>DevOps / DevSecOps</li>
+            <li>Software Engineering</li>
+            <li>ICT Operations Support</li>
+            <li>UX/UI &amp; Visual Design</li>
+            <li>IAM &amp; Federation Services</li>
+            <li>Risk &amp; Vulnerability Assessment</li>
+          </ul>
+        </div>
+
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>Information &amp; Cyber Security</h3>
+          <ul>
+            <li>ISMS implementation, consulting &amp; cyber resilience</li>
+            <li>Information Security Governance</li>
+            <li>On-premises, Cloud or Hybrid cybersecurity</li>
+            <li>Security Operations Centre (SOC)</li>
+          </ul>
+          <a href="assets/docs/offers/security.pdf" target="_blank" class="service-link">
+            View Cybersecurity Offering <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-icon"><i class="fa-solid fa-flask"></i></div>
+          <h3>Quality Assurance Services</h3>
+          <ul>
+            <li>Manual &amp; Automation Testing</li>
+            <li>Security &amp; Performance Testing</li>
+            <li>API &amp; Mobile Testing</li>
+          </ul>
+        </div>
+
+        <div class="service-card reveal reveal-delay-3">
+          <div class="service-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+          <h3>Mobile Money Implementation</h3>
+          <ul>
+            <li>Mobile Money Platform development &amp; integration</li>
+            <li>Functional &amp; operations support across Africa</li>
+            <li>Financial inclusion implementations</li>
+          </ul>
+        </div>
+
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-icon"><i class="fa-solid fa-database"></i></div>
+          <h3>Big Data, Analytics, AI &amp; Machine Learning</h3>
+          <ul>
+            <li>Big data solutions deployed across Africa</li>
+            <li>Banking, agriculture, telecom &amp; fintech integrations</li>
+            <li>Data ETL and Data Migration</li>
+          </ul>
+        </div>
+
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-icon"><i class="fa-brands fa-aws"></i></div>
+          <h3>Cloud Services</h3>
+          <ul>
+            <li>AWS, Microsoft Azure &amp; Google Cloud migration &amp; support</li>
+            <li>IaaS, PaaS and SaaS implementation</li>
+            <li>Private, public or hybrid cloud strategy</li>
+          </ul>
+        </div>
+
+        <div class="service-card reveal reveal-delay-3">
+          <div class="service-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h3>Education: STEM Services</h3>
+          <ul>
+            <li>Robotics for schools — curriculum, learner &amp; teacher support</li>
+            <li>Hands-on, problem-based STEM learning</li>
+          </ul>
+          <a href="assets/docs/offers/robotics.pdf" target="_blank" class="service-link">
+            View Robotics Offering <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       SOLUTIONS
+  ===================================================== -->
+  <section id="solutions" class="solutions section-pad">
+    <div class="container">
+      <div class="section-header center reveal">
+        <div class="section-tag">Solutions &amp; Products</div>
+        <h2 class="section-title">Security &amp; Technology Solutions</h2>
+        <p class="section-subtitle">
+          QuiverSoftech develops solutions and partners with industry OEMs to deliver the best-fit solutions for your organisation. <a href="mailto:info@quiversoftech.com" style="color:var(--yellow)">Contact us</a> for more information.
+        </p>
+      </div>
+
+      <div class="solutions-grid">
+
+        <div class="solution-card featured reveal reveal-delay-1">
+          <div class="solution-badge">Featured</div>
+          <div class="solution-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>Wazuh XDR/SIEM Solution</h3>
+          <p>Open Source Security Platform with Unified XDR and SIEM protection for your entire stack. We deliver end-to-end implementation and support.</p>
+          <ul>
+            <li>Environment assessment</li>
+            <li>Installation, configuration &amp; SOC optimization</li>
+            <li>Guidelines on supporting processes &amp; procedures</li>
+            <li>Training &amp; Professional Support</li>
+          </ul>
+        </div>
+
+        <div class="solution-card reveal reveal-delay-2">
+          <div class="solution-icon"><i class="fa-solid fa-eye"></i></div>
+          <h3>Security Operations Centre (SOC)</h3>
+          <p>Build a SOC tailored to your organisation's unique threat landscape. We guide you from assessment to fully operational capability.</p>
+          <ul>
+            <li>Gap analysis &amp; objectives definition</li>
+            <li>SOC technology &amp; resource guidance</li>
+            <li>Monitoring, detection &amp; incident response</li>
+            <li>Threat intelligence integration</li>
+            <li>SOC team training &amp; ongoing support</li>
+          </ul>
+        </div>
+
+        <div class="solution-card reveal reveal-delay-3">
+          <div class="solution-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+          <h3>CSIRT Solution</h3>
+          <p>Build a world-class Incident Response Team with the right processes, procedures and tools to respond rapidly and effectively.</p>
+          <ul>
+            <li>Current IR gap analysis</li>
+            <li>IRT Charter &amp; Code of Conduct</li>
+            <li>IR Policies, Procedures &amp; Playbooks</li>
+            <li>Alignment with InfoSec strategy</li>
+            <li>Training &amp; ongoing support</li>
+          </ul>
+        </div>
+
+        <div class="solution-card reveal reveal-delay-1">
+          <div class="solution-icon"><i class="fa-solid fa-gamepad"></i></div>
+          <h3>Gaming Platform Services</h3>
+          <p>Ensure your gaming platforms comply with relevant regulatory standards worldwide.</p>
+          <ul>
+            <li>Platform Testing &amp; Certification</li>
+            <li>RNG Testing &amp; Certification</li>
+            <li>Games Testing &amp; Certification</li>
+            <li>Sports Betting Testing &amp; Certification</li>
+          </ul>
+        </div>
+
+        <div class="solution-card reveal reveal-delay-2">
+          <div class="solution-icon"><i class="fa-solid fa-robot"></i></div>
+          <h3>STEM &amp; Robotics Solutions</h3>
+          <p>Science, Technology, Engineering and Math education solutions preparing learners for the future.</p>
+          <ul>
+            <li>Robotics curriculum development</li>
+            <li>Learner &amp; teacher support programmes</li>
+            <li>Hands-on, problem-based learning</li>
+          </ul>
+          <a href="assets/docs/offers/robotics.pdf" target="_blank" class="service-link" style="margin-top: 16px;">
+            View Robotics Brochure <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="solution-card reveal reveal-delay-3">
+          <div class="solution-icon"><i class="fa-solid fa-wallet"></i></div>
+          <h3>Mobile Money Solutions</h3>
+          <p>Implementing financial inclusion across Africa through robust, reliable mobile money platforms and integrations.</p>
+          <ul>
+            <li>Platform development &amp; implementation</li>
+            <li>System integrations &amp; API development</li>
+            <li>Operations support &amp; consulting</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       PARTNERS & CLIENTS
+  ===================================================== -->
+  <section id="partners" class="partners section-pad">
+    <div class="container">
+      <div class="section-header center reveal">
+        <div class="section-tag">Trusted By</div>
+        <h2 class="section-title">Our Valued Partners &amp; Clients</h2>
+        <p class="section-subtitle partners-intro">
+          We are proud to work alongside industry leaders and innovative organisations across Southern Africa and the continent.
+        </p>
+      </div>
+
+      <div class="partners-grid reveal">
+
+        <a href="http://www.tmcel.mz/mkesh/" target="_blank" rel="noopener" class="partner-cell">
+          <img src="assets/images/partners/mkesh.png" alt="mKesh Mozambique" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="partner-name" style="display:none">mKesh</span>
+        </a>
+
+        <a href="http://www.maljostechnologies.com" target="_blank" rel="noopener" class="partner-cell">
+          <img src="assets/images/partners/maljos.png" alt="Maljos Technologies" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="partner-name" style="display:none">Maljos Tech</span>
+        </a>
+
+        <a href="https://www.quiversoft.net/" target="_blank" rel="noopener" class="partner-cell">
+          <img src="assets/images/partners/quiver.png" alt="QuiverSoft" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="partner-name" style="display:none">QuiverSoft</span>
+        </a>
+
+        <a href="http://www.teksolto.com" target="_blank" rel="noopener" class="partner-cell">
+          <img src="assets/images/partners/teksoloto.png" alt="Teksolto" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="partner-name" style="display:none">Teksolto</span>
+        </a>
+
+        <div class="partner-cell">
+          <img src="assets/images/partners/ghsc.png" alt="GH Security Consulting" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="partner-name" style="display:none">GH Security</span>
+        </div>
+
+        <div class="partner-cell">
+          <img src="assets/images/partners/swethanesoft.png" alt="Swethane Software" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="partner-name" style="display:none">Swethane</span>
+        </div>
+
+        <a href="http://www.thombisile.co.za" target="_blank" rel="noopener" class="partner-cell">
+          <img src="assets/images/partners/thombisile.png" alt="Thombisile IT Solutions" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="partner-name" style="display:none">Thombisile IT</span>
+        </a>
+
+        <a href="https://www.bobshop.co.za/seller/1165447/Thivha_Online_Store" target="_blank" rel="noopener" class="partner-cell">
+          <img src="assets/images/partners/thivha.webp" alt="Thivha Computer Consulting" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="partner-name" style="display:none">Thivha</span>
+        </a>
+
+        <a href="https://www.betchamps.co.mz" target="_blank" rel="noopener" class="partner-cell">
+          <img src="assets/images/partners/betchamps.PNG" alt="Betchamps Mozambique" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="partner-name" style="display:none">Betchamps</span>
+        </a>
+
+        <a href="https://www.tolamobile.com" target="_blank" rel="noopener" class="partner-cell">
+          <img src="assets/images/partners/logo-tola.svg" alt="Tola Mobile" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="partner-name" style="display:none">Tola Mobile</span>
+        </a>
+
+        <a href="https://itechlabs.com" target="_blank" rel="noopener" class="partner-cell">
+          <img src="assets/images/partners/itech-labs.jpg" alt="iTech Labs" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="partner-name" style="display:none">iTech Labs</span>
+        </a>
+
+        <a href="http://www.recargaki.co.mz/" target="_blank" rel="noopener" class="partner-cell">
+          <img src="assets/images/partners/recargaki.png" alt="RecargAki" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="partner-name" style="display:none">RecargAki</span>
+        </a>
+
+        <a href="https://www.tnm.co.mw" target="_blank" rel="noopener" class="partner-cell">
+          <img src="assets/images/partners/tnm-logo.svg" alt="TNM Malawi" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="partner-name" style="display:none">TNM Malawi</span>
+        </a>
+
+        <a href="https://bluteki.com/" target="_blank" rel="noopener" class="partner-cell">
+          <img src="assets/images/partners/bluteki-logo.png" alt="Bluteki" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="partner-name" style="display:none">Bluteki</span>
+        </a>
+
+        <a href="https://digital-pangea.com/" target="_blank" rel="noopener" class="partner-cell">
+          <img src="assets/images/partners/dpangea.png" alt="Digital Pangea" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="partner-name" style="display:none">Digital Pangea</span>
+        </a>
+
+        <a href="https://inclusivitysolutions.com/" target="_blank" rel="noopener" class="partner-cell">
+          <img src="assets/images/partners/Inclusivity-SVG.svg" alt="Inclusivity Solutions" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="partner-name" style="display:none">Inclusivity</span>
+        </a>
+
+        <a href="https://www.bahatitech.com/" target="_blank" rel="noopener" class="partner-cell">
+          <img src="assets/images/partners/bhtlogo.png" alt="Bahati Tech (Pty) Ltd" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="partner-name" style="display:none">Bahati Tech</span>
+        </a>
+
+        <a href="https://www.yintech.co.za/" target="_blank" rel="noopener" class="partner-cell">
+          <img src="assets/images/partners/yintech1.png" alt="YinTech" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="partner-name" style="display:none">YinTech</span>
+        </a>
+
+        <a href="https://wazuh.com/" target="_blank" rel="noopener" class="partner-cell">
+          <img src="assets/images/partners/wazuh.jpg" alt="Wazuh" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="partner-name" style="display:none">Wazuh</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       CONTACT
+  ===================================================== -->
+  <section id="contact" class="contact section-pad">
+    <div class="container">
+      <div>
+        <div class="section-header reveal">
+          <div class="section-tag">Get In Touch</div>
+          <h2 class="section-title">Let's Work Together</h2>
+          <p class="section-subtitle">Feel free to contact us anytime. We'd love to discuss how we can help transform your organisation.</p>
+        </div>
+
+        <div class="contact-detail reveal reveal-delay-1">
+          <div class="contact-detail-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="contact-detail-body">
+            <h4>Location</h4>
+            <p>Tinchley Crescent, Milnerton Rural<br>Tableview, Cape Town, South Africa — 7441</p>
+          </div>
+        </div>
+
+        <div class="contact-detail reveal reveal-delay-2">
+          <div class="contact-detail-icon"><i class="fa-solid fa-phone"></i></div>
+          <div class="contact-detail-body">
+            <h4>Phone</h4>
+            <a href="tel:+27687360127">+27 68 736 0127</a>
+          </div>
+        </div>
+
+        <div class="contact-detail reveal reveal-delay-3">
+          <div class="contact-detail-icon"><i class="fa-brands fa-whatsapp"></i></div>
+          <div class="contact-detail-body">
+            <h4>WhatsApp</h4>
+            <a href="https://wa.me/27827994163" target="_blank" rel="noopener">+27 82 799 4163</a>
+          </div>
+        </div>
+
+        <div class="contact-detail reveal reveal-delay-4">
+          <div class="contact-detail-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div class="contact-detail-body">
+            <h4>Email</h4>
+            <a href="mailto:info@quiversoftech.com">info@quiversoftech.com</a>
+          </div>
+        </div>
+
+        <div class="contact-social reveal reveal-delay-5">
+          <a href="https://www.facebook.com/quiversoftech" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://twitter.com/quiver_softech" target="_blank" rel="noopener" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://g.page/quiversoftech?gm" target="_blank" rel="noopener" aria-label="Google"><i class="fa-brands fa-google"></i></a>
+          <a href="mailto:info@quiversoftech.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================
+       FOOTER
+  ===================================================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/logo.png" alt="QuiverSoftech">
+          <p>Providing the best unconventional and most effective Information and Communications Technology services and solutions to companies and organisations across Africa.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="#services">App Development</a></li>
+            <li><a href="#services">ICT Consulting</a></li>
+            <li><a href="#services">Cybersecurity</a></li>
+            <li><a href="#services">Cloud Services</a></li>
+            <li><a href="#services">Mobile Money</a></li>
+            <li><a href="#services">Quality Assurance</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Solutions</h4>
+          <ul class="footer-links">
+            <li><a href="#solutions">Wazuh XDR/SIEM</a></li>
+            <li><a href="#solutions">SOC Solution</a></li>
+            <li><a href="#solutions">CSIRT Solution</a></li>
+            <li><a href="#solutions">Gaming Platforms</a></li>
+            <li><a href="#solutions">STEM &amp; Robotics</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#partners">Partners &amp; Clients</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="assets/docs/offers/security.pdf" target="_blank">Security Brochure</a></li>
+            <li><a href="assets/docs/offers/robotics.pdf" target="_blank">Robotics Brochure</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 <a href="#">QuiverSoftech (Pty) Ltd</a>. All rights reserved. Designed &amp; developed by QuiverSoftech.</p>
+        <p>Cape Town, South Africa</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to top -->
+  <button class="scroll-top" id="scrollTop" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <!-- =====================================================
+       SCRIPTS
+  ===================================================== -->
+  <script>
+    /* --- Navigation toggle --- */
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.getElementById('navLinks');
+
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
+    });
+
+    /* --- Active nav link on scroll --- */
+    const sections = document.querySelectorAll('section[id], footer[id]');
+    const navAnchorLinks = document.querySelectorAll('.nav-links a');
+
+    const observerNav = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          navAnchorLinks.forEach(a => {
+            a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+          });
+        }
+      });
+    }, { threshold: 0.35 });
+
+    sections.forEach(s => observerNav.observe(s));
+
+    /* --- Scroll reveal --- */
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    reveals.forEach(el => observer.observe(el));
+
+    /* --- Scroll to top button --- */
+    const scrollTopBtn = document.getElementById('scrollTop');
+
+    window.addEventListener('scroll', () => {
+      scrollTopBtn.classList.toggle('visible', window.scrollY > 500);
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    /* --- Partner image fallback: show name when img fails --- */
+    document.querySelectorAll('.partner-cell img').forEach(img => {
+      img.addEventListener('error', function() {
+        this.style.display = 'none';
+        const nameSpan = this.nextElementSibling;
+        if (nameSpan) nameSpan.style.display = 'block';
+      });
+    });
+  </script>
+
+</body>
+</html>
